@@ -93,8 +93,7 @@ namespace GuessThePrice.ViewModel
             {
                 if (_winnerText != value)
                 {
-                    _winnerText = v
-                        alue;
+                    _winnerText = value;
                     OnPropertyChanged();
                 }
             }
