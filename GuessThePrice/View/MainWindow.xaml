@@ -1,0 +1,31 @@
+﻿<Window x:Class="GuessThePrice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuessThePrice"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Winner Text" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <Label Content="{Binding Min}" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <Label Content="{Binding Max}" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <Label Content="ActualPrice" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"></Label>
+        <Button Content="Gomb" Command="{Binding NextRoundCommand}" Grid.Row="3" Grid.ColumnSpan="2"  Width="200"></Button>
+        <Label Content="„Opponents’ guess:” " Grid.Column="0" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+        <Label Content="{Binding OpPriceGuess}" Grid.Column="0" Grid.Row="4" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
+        <TextBox Text="{Binding PlayerPriceGuess}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Top" Height="40"></TextBox>
+        <Button Content="Make Guess" Command="{Binding PlayerGuessCommand}"  Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom" Height="40"></Button>
+    </Grid>
+</Window>
